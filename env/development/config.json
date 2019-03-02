@@ -1,0 +1,30 @@
+{
+	"mongodb":"mongodb://localhost/media_dev_database",
+	"s3":{
+		"Bucket":"mserver"
+	},
+	"smtp": {
+		"username":"claudioteixeira7@gmail.com",
+		"host":"smtp.mandrillapp.com",
+		"port": 587
+	},
+	"rabbitmq":{
+	  "connection": {
+	    "user": "admin",
+	    "pass": "password",
+	    "server": "localhost",
+	    "vhost": "/test-app"
+	  },
+	  "exchanges":[
+	    {"name": "email.ex", "type": "direct"}
+	  ],
+	  "queues":[
+	    {"name": "email.q"}
+	  ],
+	  "bindings":[{
+	    	"exchange": "email.ex", 
+	    	"target": "email.q",
+	    	"keys": ["send"]
+	    }]
+	}
+}

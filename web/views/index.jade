@@ -1,0 +1,13 @@
+extends layout
+block content
+	h1= `Crypto Msg Tool`	
+	form(action="/send", method="post")
+		p
+			| From:
+			input(name="from", value="from")
+		p
+			| Message
+			textarea(name="message") 				
+
+		p			
+			input(type="submit", method="POST")
